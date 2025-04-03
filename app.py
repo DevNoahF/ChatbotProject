@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)  # Permite que o frontend acesse a API
 
 # API gratuita do OpenRouter (substitui OpenAI)
-OPENROUTER_API_KEY = "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"
+OPENROUTER_API_KEY = "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"
 
 @app.route("/chat", methods=["POST"])
 def chat():
