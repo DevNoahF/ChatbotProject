@@ -23,3 +23,13 @@ def get_bot_reply(user_message):
     )
 
     return response.json()["choices"][0]["message"]["content"]
+
+
+def palavras_chave(mensagem):
+    palavras=["frete","produto"]#Aqui fica as palavras chave que são RELEVANTES, as que não estiverem aqui não serão relevantes
+
+    for palavras in palavras:
+        if palavras.lower() in mensagem.lower():
+            return True
+        return False
+
