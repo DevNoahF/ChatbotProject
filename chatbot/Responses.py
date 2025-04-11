@@ -25,11 +25,12 @@ def get_bot_reply(user_message):
     return response.json()["choices"][0]["message"]["content"]
 
 
+#Algum problema fez com que ele parasse de responder as perguntas
 def palavras_chave(mensagem):
-    palavras=["frete","produto"]#Aqui fica as palavras chave que são RELEVANTES, as que não estiverem aqui não serão relevantes
+    palavras=["frete","produto", "valores", "plano", "Design","chatbot", "suporte", "loja virtual", "vantagens","planos" ]#Aqui fica as palavras chave que são RELEVANTES, as que não estiverem aqui não serão relevantes
 
     for palavras in palavras:
         if palavras.lower() in mensagem.lower():
             return True
-        return False
+    return False
 
