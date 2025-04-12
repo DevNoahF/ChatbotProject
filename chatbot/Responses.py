@@ -3,7 +3,22 @@
 import requests
 from config.settings import ROUTEROPENIA_API_KEY
 
-def get_bot_reply(user_message):
+import json
+import requests
+from config.settings import ROUTEROPENIA_API_KEY
+
+# Função para carregar o contexto do template com base no ID
+def load_template_context(template_id):
+    try:
+        with open(f"templates_contexto/{template_id}.json", "r", encoding="utf-8") as f:
+            return json.load(f)["contexto"]
+    except FileNotFoundError:
+        return "Você é um assistente virtual de atendimento. Seja educado, claro e objetivo."
+
+# Função principal de resposta do bot
+def get_bot_reply(user_message, template_id="loja_designs"): # Mudar o template se necessario
+    contexto = load_template_context(template_id)
+
     response = requests.post(
         "https://openrouter.ai/api/v1/chat/completions",
         headers={
@@ -13,17 +28,17 @@ def get_bot_reply(user_message):
         json={
             "model": "openai/gpt-3.5-turbo",
             "messages": [
-                {"role": "user", "content": user_message},
-                {"role": "user", "content": "Você é um bot de atendimento ao cliente, seja educado, claro e objetivo"}
+                {"role": "system", "content": contexto},
+                {"role": "user", "content": user_message}
             ],
             "temperature": 0.3,
-            "max_tokens": 50,
-            "presence_penalty": 1.0
+            "max_tokens": 100,
+            "presence_penalty": -2.0,
+            "top_p": 0.4
         }
     )
 
     return response.json()["choices"][0]["message"]["content"]
-
 
 #Algum problema fez com que ele parasse de responder as perguntas
 def palavras_chave(mensagem):
