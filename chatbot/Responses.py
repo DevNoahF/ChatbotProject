@@ -5,7 +5,7 @@ from config.settings import ROUTEROPENIA_API_KEY
 
 import json
 import requests
-from config.settings import ROUTEROPENIA_API_KEY
+from config.settings import ROUTEROPENIA_API_KEY, change_tokens
 
 # Função para carregar o contexto do template com base no ID
 def load_template_context(template_id):
@@ -31,16 +31,16 @@ def get_bot_reply(user_message, template_id="loja_designs"): # Mudar o template 
                 {"role": "system", "content": contexto},
                 {"role": "user", "content": user_message}
             ],
-            "temperature": 0.3,
-            "max_tokens": 100,
-            "presence_penalty": -2.0,
-            "top_p": 0.4
+            "temperature": 0.7,
+            "max_tokens": change_tokens(user_message),
+            "presence_penalty": 0.3,
+            "top_p": 0.8
         }
     )
 
     return response.json()["choices"][0]["message"]["content"]
 
-#Algum problema fez com que ele parasse de responder as perguntas
+
 def palavras_chave(mensagem):
     palavras=["frete","produto", "valores", "plano", "Design","chatbot", "suporte", "loja virtual", "vantagens","planos" ]#Aqui fica as palavras chave que são RELEVANTES, as que não estiverem aqui não serão relevantes
 

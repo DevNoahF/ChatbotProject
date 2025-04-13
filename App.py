@@ -5,7 +5,7 @@ import requests
 
 from chatbot.Responses import palavras_chave
 
-from config.settings import ROUTEROPENIA_API_KEY
+from config.settings import ROUTEROPENIA_API_KEY, change_tokens
 
 app = Flask(__name__)
 CORS(app)  # Permite que o frontend acesse a API
@@ -26,20 +26,21 @@ def chat():
             "Plano Completo-Design Completo, ChatBot IA, Suporte 24h, Relatório"
             "Plano Premium-Design Completo, ChatBot IA, Suporte 24h, Relatório e Taxa em 0.75%"
             "Sempre que você receber uma mensagem a qualquer coisa referente aos planos, você deve gerar uma resposta levando em conta o quê eu acabei de dizer a você"
-            "Você pode utilizar apenas 100 tokens, tente ao máximo sempre utilizar metade desses tokens"},
+            "Seja criativo ao gerar a resposta para chamar a atenção do cliente"
+            },
             #Contexto para ele, mais tarde a gente adiciona as coisas
         ],
-            "temperature":0.3,#Define se ele é determinístico ou criativo
-            "max_tokens":100, #Define quantidade de caracteres
-            "presence_penalty":-2.0, #Define penalidade por sair do assunto
-            "top_p":0.4 #Deixa mais favorável a usar palavras mais comuns
+            "temperature":0.7,#Define se ele é determinístico ou criativo
+            "max_tokens":change_tokens(user_message), #Define quantidade de caracteres
+            "presence_penalty":0.3, #Define penalidade por sair do assunto
+            "top_p":0.8 #Deixa mais favorável a usar palavras mais comuns
         }
     )
 
 
     bot_reply = response.json()["choices"][0]["message"]["content"]
 
-    #Algum erro fez com ele deixasse de responder qualquer pergunta
+
     if not palavras_chave(user_message):
         bot_reply= "Desculpe, não posso responder a essa pergunta"
 
