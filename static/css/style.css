@@ -42,6 +42,26 @@
 html {
      scroll-behavior: smooth;
 }
+/* Botão flutuante */
+#chatbot-button {
+     position: fixed;
+     bottom: 20px;
+     right: 20px;
+     background-color: #007bff;
+     color: white;
+     border-radius: 50%;
+     width: 60px;
+     height: 60px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 24px;
+     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+     cursor: pointer;
+     z-index: 999;
+  }
+  
+  
 
 body {
      color: #666666;
