@@ -3,6 +3,7 @@ from flask_cors import CORS
 import requests
 
 
+
 from chatbot.Responses import palavras_chave
 
 from config.settings import ROUTEROPENIA_API_KEY, change_tokens

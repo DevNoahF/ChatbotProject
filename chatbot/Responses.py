@@ -6,6 +6,9 @@ from config.settings import ROUTEROPENIA_API_KEY
 import json
 import requests
 from config.settings import ROUTEROPENIA_API_KEY, change_tokens
+import spacy
+
+nlp=spacy.load("pt_core_news_lg")
 
 # Função para carregar o contexto do template com base no ID
 def load_template_context(template_id):
@@ -39,6 +42,23 @@ def get_bot_reply(user_message, template_id="loja_designs"): # Mudar o template 
     )
 
     return response.json()["choices"][0]["message"]["content"]
+
+def idnt_question(message):
+    pergunta= nlp(message)#Processamento da mensagem do usuário
+
+    with open("Perguntas/Perguntas.txt", "r") as f:#Imagino que isso vai ser provisório, mas serve para ler o arquvio Perguntas.txt
+        banc_perguntas=f.read()
+
+        perguntas=nlp(banc_perguntas)#Processamento das perguntas
+
+    similaridade=perguntas.similarity(pergunta)#Vê a similaridade e retorna um valor entre 0 e 1
+
+    if similaridade>=0.71:
+        return 0
+
+    if similaridade<=0.70:#Caso nenhuma pergunta esteja dentro dos parãmetros, encontrar a pergunta mais similar
+        return 1#Ainda não tem nada devido aos erros
+
 
 
 def palavras_chave(mensagem):
