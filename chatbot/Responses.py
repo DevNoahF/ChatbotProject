@@ -7,7 +7,9 @@ import json
 import requests
 from config.settings import ROUTEROPENIA_API_KEY, change_tokens
 import spacy
+import os
 nlp=spacy.load("pt_core_news_lg")
+
 
 # Função para carregar o contexto do template com base no ID
 def load_template_context(template_id):
@@ -45,23 +47,25 @@ def get_bot_reply(user_message, template_id="loja_designs"): # Mudar o template 
 def idnt_question(message):
     pergunta= nlp(message)#Processamento da mensagem do usuário
 
-    with open("Perguntas.txt", "r") as f:#Imagino que isso vai ser provisório, mas serve para ler o arquvio Perguntas.txt
-        banc_perguntas=f.read()
+    base_path = os.path.dirname(os.path.abspath(__file__))
+    caminho_arquivo = os.path.join(base_path, "Perguntas.txt")
 
-        perguntas=nlp(banc_perguntas)#Processamento das perguntas
 
-    similaridade=perguntas.similarity(pergunta)#Vê a similaridade e retorna um valor entre 0 e 1
+    with open(caminho_arquivo, "r") as f:#Imagino que isso vai ser provisório, mas serve para ler o arquvio Perguntas.txt
+        perg=f.read()
+
+    perguntas=nlp(perg)#Processamento das perguntas
+
+    similaridade=pergunta.similarity(perguntas)#Vê a similaridade e retorna um valor entre 0 e 1
 
     if similaridade>=0.71:
         return 0
 
     if similaridade<=0.70:#Caso nenhuma pergunta esteja dentro dos parãmetros, encontrar a pergunta mais similar
-        return 1#Ainda não tem nada devido aos erros
-
-
+        return 1
 
 def palavras_chave(mensagem):
-    palavras=["frete","produto", "valores", "plano", "Design","chatbot", "suporte", "loja virtual", "vantagens","planos","suporte" ]#Aqui fica as palavras chave que são RELEVANTES, as que não estiverem aqui não serão relevantes
+    palavras=["frete","produto", "valores", "plano", "Design","chatbot", "suporte", "loja virtual", "vantagens","planos","suporte","assistencia técnica" ]#Aqui fica as palavras chave que são RELEVANTES, as que não estiverem aqui não serão relevantes
 
     for palavras in palavras:
         if palavras.lower() in mensagem.lower():

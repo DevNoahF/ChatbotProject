@@ -46,7 +46,7 @@ def chat():
         return jsonify({"ASSISTENTE": bot_reply})
 
     if tipo_resposta==1:
-        bot_reply="Não posso responder essa pergunta"
+        bot_reply="Não posso responder essa pergunta, pois não existe no meu banco de perguntas"
         return jsonify({"ASSISTENTE": bot_reply})
 
 
