@@ -7,7 +7,6 @@ import json
 import requests
 from config.settings import ROUTEROPENIA_API_KEY, change_tokens
 import spacy
-
 nlp=spacy.load("pt_core_news_lg")
 
 # Função para carregar o contexto do template com base no ID
@@ -46,7 +45,7 @@ def get_bot_reply(user_message, template_id="loja_designs"): # Mudar o template 
 def idnt_question(message):
     pergunta= nlp(message)#Processamento da mensagem do usuário
 
-    with open("Perguntas/Perguntas.txt", "r") as f:#Imagino que isso vai ser provisório, mas serve para ler o arquvio Perguntas.txt
+    with open("Perguntas.txt", "r") as f:#Imagino que isso vai ser provisório, mas serve para ler o arquvio Perguntas.txt
         banc_perguntas=f.read()
 
         perguntas=nlp(banc_perguntas)#Processamento das perguntas
@@ -62,7 +61,7 @@ def idnt_question(message):
 
 
 def palavras_chave(mensagem):
-    palavras=["frete","produto", "valores", "plano", "Design","chatbot", "suporte", "loja virtual", "vantagens","planos" ]#Aqui fica as palavras chave que são RELEVANTES, as que não estiverem aqui não serão relevantes
+    palavras=["frete","produto", "valores", "plano", "Design","chatbot", "suporte", "loja virtual", "vantagens","planos","suporte" ]#Aqui fica as palavras chave que são RELEVANTES, as que não estiverem aqui não serão relevantes
 
     for palavras in palavras:
         if palavras.lower() in mensagem.lower():

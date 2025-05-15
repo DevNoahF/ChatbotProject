@@ -4,7 +4,8 @@ import requests
 
 
 
-from chatbot.Responses import palavras_chave
+from chatbot.Responses import palavras_chave, idnt_question
+
 
 from config.settings import ROUTEROPENIA_API_KEY, change_tokens
 
@@ -15,6 +16,8 @@ CORS(app)  # Permite que o frontend acesse a API
 def chat():
     data = request.json
     user_message = data.get("message", "")
+
+    tipo_resposta = idnt_question(user_message)
 
     response = requests.post(
         "https://openrouter.ai/api/v1/chat/completions",
@@ -37,16 +40,21 @@ def chat():
             "top_p":0.8 #Deixa mais favorável a usar palavras mais comuns
         }
     )
+    if tipo_resposta==0:
 
+        bot_reply = response.json()["choices"][0]["message"]["content"]
+        return jsonify({"ASSISTENTE": bot_reply})
 
-    bot_reply = response.json()["choices"][0]["message"]["content"]
+    if tipo_resposta==1:
+        bot_reply="Não posso responder essa pergunta"
+        return jsonify({"ASSISTENTE": bot_reply})
 
 
     if not palavras_chave(user_message):
         bot_reply= "Desculpe, não posso responder a essa pergunta"
+        return jsonify({"ASSISTENTE": bot_reply})
 
 
-    return jsonify({"ASSISTENTE": bot_reply})
 
 if __name__ == "__main__":
     app.run(debug=True)
