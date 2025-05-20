@@ -16,6 +16,7 @@ CORS(app)  # Permite que o frontend acesse a API
 def chat():
     data = request.json
     user_message = data.get("message", "")
+    bot_reply=""
 
     tipo_resposta = idnt_question(user_message)
 
@@ -42,19 +43,20 @@ def chat():
     )
     if tipo_resposta==0:
         bot_reply = response.json()["choices"][0]["message"]["content"]
-        return jsonify({"ASSISTENTE": bot_reply})
+
 
     if tipo_resposta==1:
         bot_reply="Não posso responder essa pergunta, pois não existe no meu banco de perguntas"
-        return jsonify({"ASSISTENTE": bot_reply})
+
 
     if tipo_resposta !=0 and tipo_resposta !=1:
-        bot_reply=f"Você quis dizer{tipo_resposta}?"
-        return jsonify({"ASSISTENTE": bot_reply})
+        bot_reply=f"Você quis dizer {tipo_resposta}"
+
 
     if not palavras_chave(user_message):
         bot_reply= "Desculpe, não posso responder a essa pergunta"
-        return jsonify({"ASSISTENTE": bot_reply})
+
+    return jsonify({"ASSISTENTE": bot_reply})
 
 @app.route('/message', methods=["GET"])#A ideia dessa função é buscar as mensagens postadas pelo usuario para serem tratadas pela ia
 def get_message():
