@@ -1,7 +1,6 @@
 # services/responses.py
 
-import requests
-from config.settings import ROUTEROPENIA_API_KEY
+
 
 import json
 import requests
@@ -47,25 +46,26 @@ def get_bot_reply(user_message, template_id="loja_designs"): # Mudar o template 
     return response.json()["choices"][0]["message"]["content"]
 
 def idnt_question(message):
-    pergunta= nlp(message)#Processamento da mensagem do usuário
-
     base_path = os.path.dirname(os.path.abspath(__file__))
-    caminho_arquivo = os.path.join(base_path, "Perguntas/Perguntas.json")#Alterar par a um json no banco de dados
-
-    with open(caminho_arquivo, "r") as f:#Imagino que isso vai ser provisório, mas serve para ler o arquvio Perguntas.txt
-        perg=json.load(f)
-
+    caminho_arquivo = os.path.join(base_path, "Perguntas/Perguntas.json")
     similaridade=0.0
-    for i in perg["perguntas"]:
-        perguntas=nlp(i["pergunta"])
-        similaridade=pergunta.similarity(perguntas)
+    mes=nlp(message)
+
+    with open(caminho_arquivo, "r") as file:
+        dados=json.load(file)
 
 
-    if similaridade>=0.60:
-        return 0
+    for perguntas in dados["perguntas"]:
+        texto_pergunta = dados["pergunta"]
+        doc_pergunta = nlp(texto_pergunta)
 
-    if similaridade<=0.59:#Caso nenhuma pergunta esteja dentro dos parãmetros, encontrar a pergunta mais similar
+        similaridade=mes.similarity(doc_pergunta)
+
+    if similaridade>=0.61:
         return 1
+
+    return 0
+
 
 def palavras_chave(mensagem):
     palavras=["frete","produto", "valores", "plano", "Design","chatbot", "suporte", "loja virtual", "vantagens","planos","suporte","assistencia técnica" ]#Aqui fica as palavras chave que são RELEVANTES, as que não estiverem aqui não serão relevantes
