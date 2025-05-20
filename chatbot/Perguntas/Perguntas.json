@@ -1,0 +1,92 @@
+{
+  "perguntas": [
+    {
+      "id": 1,
+      "pergunta": "Como posso entrar em contato com o suporte?"
+    },
+    {
+      "id": 2,
+      "pergunta": "Vocês oferecem atendimento via chatbot?"
+    },
+    {
+      "id": 3,
+      "pergunta": "O que posso fazer se o chatbot não resolver minha dúvida?"
+    },
+    {
+      "id": 4,
+      "pergunta": "Como posso acompanhar o status do meu pedido?"
+    },
+    {
+      "id": 5,
+      "pergunta": "Vocês oferecem suporte 24 horas?"
+    },
+    {
+      "id": 6,
+      "pergunta": "Quais são as vantagens de comprar na sua loja virtual?"
+    },
+    {
+      "id": 7,
+      "pergunta": "Como posso me cadastrar para receber novidades e promoções?"
+    },
+    {
+      "id": 8,
+      "pergunta": "Vocês oferecem garantia nos produtos?"
+    },
+    {
+      "id": 9,
+      "pergunta": "Como posso devolver ou trocar um produto?"
+    },
+    {
+      "id": 10,
+      "pergunta": "Há algum programa de fidelidade ou recompensas?"
+    },
+    {
+      "id": 11,
+      "pergunta": "Posso personalizar o design do produto?"
+    },
+    {
+      "id": 12,
+      "pergunta": "Quais opções de cores estão disponíveis?"
+    },
+    {
+      "id": 13,
+      "pergunta": "Vocês oferecem serviços de personalização?"
+    },
+    {
+      "id": 14,
+      "pergunta": "Como posso visualizar as opções de design antes de comprar?"
+    },
+    {
+      "id": 15,
+      "pergunta": "Há custos adicionais para personalização?"
+    },
+    {
+      "id": 16,
+      "pergunta": "Quais formas de pagamento vocês aceitam?"
+    },
+    {
+      "id": 17,
+      "pergunta": "Posso parcelar minha compra?"
+    },
+    {
+      "id": 18,
+      "pergunta": "Há algum desconto para pagamentos à vista?"
+    },
+    {
+      "id": 19,
+      "pergunta": "Vocês oferecem promoções ou cupons de desconto?"
+    },
+    {
+      "id": 20,
+      "pergunta": "Como posso aplicar um código promocional?"
+    },
+    {
+      "id": 21,
+      "pergunta": "Quais produtos estão disponíveis em estoque?"
+    },
+    {
+      "id": 22,
+      "pergunta": "Vocês oferecem planos de assinatura?"
+    }
+  ]}
+

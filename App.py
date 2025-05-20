@@ -54,6 +54,16 @@ def chat():
         bot_reply= "Desculpe, não posso responder a essa pergunta"
         return jsonify({"ASSISTENTE": bot_reply})
 
+@app.route('/message', methods=["GET"])#A ideia dessa função é buscar as mensagens postadas pelo usuario para serem tratadas pela ia
+def get_message():
+    mensagens=[]
+
+    sender=request.args.get("sender")
+    message=request.args.get("message")
+
+    if sender and message:
+        mensagens.append({'sender':sender,'message':message})
+    return mensagens
 
 
 if __name__ == "__main__":
