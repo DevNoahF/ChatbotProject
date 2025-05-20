@@ -54,17 +54,24 @@ def idnt_question(message):
     with open(caminho_arquivo, "r") as file:
         dados=json.load(file)
 
-
+    pergunta=None
+    sim=0.0
     for perguntas in dados["perguntas"]:
-        texto_pergunta = dados["pergunta"]
+        texto_pergunta = perguntas["pergunta"]
         doc_pergunta = nlp(texto_pergunta)
-
         similaridade=mes.similarity(doc_pergunta)
+        if sim<similaridade:
+            sim=similaridade
+            pergunta=doc_pergunta
 
     if similaridade>=0.61:
-        return 1
+        return 0
 
-    return 0
+    if similaridade<=0.60:
+
+        return pergunta
+
+    return 1
 
 
 def palavras_chave(mensagem):

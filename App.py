@@ -41,7 +41,6 @@ def chat():
         }
     )
     if tipo_resposta==0:
-
         bot_reply = response.json()["choices"][0]["message"]["content"]
         return jsonify({"ASSISTENTE": bot_reply})
 
@@ -49,6 +48,9 @@ def chat():
         bot_reply="Não posso responder essa pergunta, pois não existe no meu banco de perguntas"
         return jsonify({"ASSISTENTE": bot_reply})
 
+    if tipo_resposta !=0 and tipo_resposta !=1:
+        bot_reply=f"Você quis dizer{tipo_resposta}?"
+        return jsonify({"ASSISTENTE": bot_reply})
 
     if not palavras_chave(user_message):
         bot_reply= "Desculpe, não posso responder a essa pergunta"
