@@ -1,0 +1,44 @@
+version: "3.1"
+
+nlu:
+- intent: saudacao
+  examples: |
+    - oi
+    - olá
+    - bom dia
+    - boa tarde
+    - e aí
+
+- intent: despedida
+  examples: |
+    - tchau
+    - até logo
+    - até mais
+    - falou
+
+- intent: perguntar_horario
+  examples: |
+    - qual o horário da loja?
+    - quando vocês abrem?
+    - que horas fecha a loja?
+    - qual o horário de funcionamento?
+
+- intent: perguntar_tenis
+  examples: |
+    - vocês têm tênis masculino?
+    - tem tênis para homens?
+    - onde encontro tênis masculino?
+    - vocês vendem tênis?
+
+- intent: perguntar_promocao
+  examples: |
+    - tem promoção hoje?
+    - quais os descontos disponíveis?
+    - alguma oferta especial?
+    - tem cupom de desconto?
+
+- intent: perguntar_localizacao
+  examples: |
+    - onde fica a loja?
+    - qual o endereço da loja?
+    - onde vocês estão localizados?
