@@ -25,18 +25,18 @@ def chat():
         headers={"Authorization": f"Bearer {ROUTEROPENIA_API_KEY}", "Content-Type": "application/json"},
         json={"model": "openai/gpt-3.5-turbo", "messages": [
             {"role": "user", "content": user_message},
-            {"role": "user", "content": "Você é um bot de atendimento ao cliente, seja educado, claro e objetivo"
+            {"role": "user", "content": "Você é um bot de atendimento ao cliente, seja educado, claro e objetivo, evite usar palavras grandes e explicações desnecessárias"
             "Nós somos um site que criamos Designs para lojas virtuais, vendemos planos diferentes que oferecem diferentes vantagens,"
             "Plano Básico-Design Completo, ChatBot IA, Suporte 24h,"
             "Plano Completo-Design Completo, ChatBot IA, Suporte 24h, Relatório"
             "Plano Premium-Design Completo, ChatBot IA, Suporte 24h, Relatório e Taxa em 0.75%"
             "Sempre que você receber uma mensagem a qualquer coisa referente aos planos, você deve gerar uma resposta levando em conta o quê eu acabei de dizer a você"
-            "Seja criativo ao gerar a resposta para chamar a atenção do cliente"
+             "Email"
             },
             #Contexto para ele, mais tarde a gente adiciona as coisas
         ],
-            "temperature":0.7,#Define se ele é determinístico ou criativo
-            "max_tokens":change_tokens(user_message), #Define quantidade de caracteres
+            "temperature":0.3,#Define se ele é determinístico ou criativo
+            "max_tokens":min(80,change_tokens(user_message)), #Define quantidade de caracteres
             "presence_penalty":0.3, #Define penalidade por sair do assunto
             "top_p":0.8 #Deixa mais favorável a usar palavras mais comuns
         }

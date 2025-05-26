@@ -36,8 +36,8 @@ def get_bot_reply(user_message, template_id="loja_designs"): # Mudar o template 
                 {"role": "system", "content": contexto},
                 {"role": "user", "content": user_message}
             ],
-            "temperature": 0.7,
-            "max_tokens": change_tokens(user_message),
+            "temperature": 0.3,
+            "max_tokens": min(50,change_tokens(user_message)),
             "presence_penalty": 0.3,
             "top_p": 0.8
         }
@@ -69,7 +69,7 @@ def idnt_question(message):
 
     if sim<=0.60:
 
-        return pergunta
+        return pergunta,sim#Não está processando pergunta 18, por algum motivo, pergunta 22 precisa de ajuste
 
     return 1
 
@@ -88,7 +88,7 @@ def palavras_chave(mensagem):
     "custos adicionais", "taxas extras", "formas de pagamento", "meios de pagamento", "parcelamento", "pagamento à vista", "à vista", "desconto",
     "código promocional", "cupom", "voucher", "promo code",
     "estoque", "disponibilidade", "produtos disponíveis",
-    "planos de assinatura", "assinatura", "plano", "pacote" ]#Aqui fica as palavras chave que são RELEVANTES, as que não estiverem aqui não serão relevantes
+    "planos de assinatura", "assinatura", "plano", "pacote","personalização" ]#Aqui fica as palavras chave que são RELEVANTES, as que não estiverem aqui não serão relevantes
 
     for palavras in palavras:
         if palavras.lower() in mensagem.lower():
