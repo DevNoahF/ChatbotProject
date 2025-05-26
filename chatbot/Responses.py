@@ -64,10 +64,10 @@ def idnt_question(message):
             sim=similaridade
             pergunta=doc_pergunta
 
-    if similaridade>=0.61:
+    if sim>=0.61:
         return 0
 
-    if similaridade<=0.60:
+    if sim<=0.60:
 
         return pergunta
 
@@ -75,7 +75,20 @@ def idnt_question(message):
 
 
 def palavras_chave(mensagem):
-    palavras=["frete","produto", "valores", "plano", "Design","chatbot", "suporte", "loja virtual", "vantagens","planos","suporte","assistencia técnica" ]#Aqui fica as palavras chave que são RELEVANTES, as que não estiverem aqui não serão relevantes
+    palavras=    [
+    "suporte", "atendimento", "contato", "ajuda", "assistência", "fale conosco", "central de atendimento", "suporte técnico",
+    "chatbot", "assistente virtual", "bot", "chat online", "chat ao vivo",
+    "pedido", "compra", "status", "andamento", "rastrear", "acompanhar pedido", "situação do pedido",
+    "24 horas", "tempo integral", "atendimento contínuo", "atendimento sempre disponível",
+    "vantagens", "benefícios", "promoções", "ofertas", "descontos", "planos", "assinatura", "pacotes", "melhor preço",
+    "cadastrar", "inscrever", "registrar", "novidades", "promoções", "ofertas especiais", "novos produtos",
+    "garantia", "reembolso", "troca", "devolução", "suporte pós-venda",
+    "fidelidade", "recompensas", "programa de pontos", "benefícios exclusivos",
+    "personalizar", "design", "layout", "customizar", "cores", "opções de cor", "variações de cor", "visualização",
+    "custos adicionais", "taxas extras", "formas de pagamento", "meios de pagamento", "parcelamento", "pagamento à vista", "à vista", "desconto",
+    "código promocional", "cupom", "voucher", "promo code",
+    "estoque", "disponibilidade", "produtos disponíveis",
+    "planos de assinatura", "assinatura", "plano", "pacote" ]#Aqui fica as palavras chave que são RELEVANTES, as que não estiverem aqui não serão relevantes
 
     for palavras in palavras:
         if palavras.lower() in mensagem.lower():

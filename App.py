@@ -56,6 +56,8 @@ def chat():
     if not palavras_chave(user_message):
         bot_reply= "Desculpe, não posso responder a essa pergunta"
 
+    print(f"tipo_resposta: {tipo_resposta}")
+    print(f"palavras_chave: {palavras_chave(user_message)}")
     return jsonify({"ASSISTENTE": bot_reply})
 
 
