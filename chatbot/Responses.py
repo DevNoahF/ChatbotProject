@@ -8,6 +8,11 @@ import requests
 from config.settings import ROUTEROPENIA_API_KEY, change_tokens
 import spacy
 import os
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+import string
+
+stop_words = set(stopwords.words('portuguese'))#Carregar biblioteca do nltk em português
 
 
 nlp=spacy.load("pt_core_news_lg")#Carrega o spacy
@@ -45,12 +50,18 @@ def get_bot_reply(user_message, template_id="loja_designs"): # Mudar o template 
     )
 
     return response.json()["choices"][0]["message"]["content"]
+def preprocess_text(text):
+    # Tokeniza e remove stopwords e pontuações
+    tokens = word_tokenize(text.lower(), language='portuguese')
+    tokens = [t for t in tokens if t not in stop_words and t not in string.punctuation]
+    return " ".join(tokens)  # junta tokens limpos numa string
 
 def idnt_question(message):
     base_path = os.path.dirname(os.path.abspath(__file__))
     caminho_arquivo = os.path.join(base_path, "Perguntas/Perguntas.json")
     similaridade=0.0
-    mes=nlp(message)
+    clean_message = preprocess_text(message)
+    mes=nlp(clean_message)
 
     with open(caminho_arquivo, "r") as file:
         dados=json.load(file)
