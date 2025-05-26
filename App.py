@@ -31,7 +31,6 @@ def chat():
             "Plano Completo-Design Completo, ChatBot IA, Suporte 24h, Relatório"
             "Plano Premium-Design Completo, ChatBot IA, Suporte 24h, Relatório e Taxa em 0.75%"
             "Sempre que você receber uma mensagem a qualquer coisa referente aos planos, você deve gerar uma resposta levando em conta o quê eu acabei de dizer a você"
-             "Email"
             },
             #Contexto para ele, mais tarde a gente adiciona as coisas
         ],
