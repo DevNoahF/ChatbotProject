@@ -108,20 +108,26 @@ def idnt_question(message: str) -> Union[int, Tuple[str, float]]:
 
 def palavras_chave(mensagem: str) -> bool:
     palavras_relevantes = [
-        "suporte", "atendimento", "contato", "ajuda", "assistência", "fale conosco", "central de atendimento", "suporte técnico",
-        "chatbot", "assistente virtual", "bot", "chat online", "chat ao vivo",
-        "pedido", "compra", "status", "andamento", "rastrear", "acompanhar pedido", "situação do pedido",
-        "24 horas", "tempo integral", "atendimento contínuo", "atendimento sempre disponível",
-        "vantagens", "benefícios", "promoções", "ofertas", "descontos", "planos", "assinatura", "pacotes", "melhor preço",
-        "cadastrar", "inscrever", "registrar", "novidades", "promoções", "ofertas especiais", "novos produtos",
-        "garantia", "reembolso", "troca", "devolução", "suporte pós-venda",
-        "fidelidade", "recompensas", "programa de pontos", "benefícios exclusivos",
-        "personalizar", "design", "layout", "customizar", "cores", "opções de cor", "variações de cor", "visualização",
-        "custos adicionais", "taxas extras", "formas de pagamento", "meios de pagamento", "parcelamento", "pagamento à vista", "à vista", "desconto",
-        "código promocional", "cupom", "voucher", "promo code",
-        "estoque", "disponibilidade", "produtos disponíveis",
-        "planos de assinatura", "assinatura", "plano", "pacote", "personalização"
+        # Suplementos e produtos
+        "whey", "whey protein", "creatina", "bcaa", "termogênico", "pré-treino", "glutamina", "multivitamínico",
+        "hipercalórico", "caseína", "colágeno", "omega 3", "zma", "cafeína",
+
+        # Objetivos e benefícios
+        "ganho de massa", "hipertrofia", "definição muscular", "perder gordura", "emagrecimento", "energia para treino",
+        "recuperação muscular", "rendimento", "performance", "força", "resistência",
+
+        # Dúvidas comuns
+        "como tomar", "efeitos colaterais", "posso misturar", "horário ideal", "preciso ciclar",
+        "quanto tempo para ver resultado", "faz mal", "funciona mesmo", "para que serve",
+
+        # Compra e suporte
+        "comprar", "loja", "entrega", "frete", "disponível", "em estoque", "formas de pagamento", "parcelamento",
+        "promoção", "desconto", "cupom", "oferta", "garantia", "troca", "reembolso", "devolução",
+
+        # Atendimento
+        "atendimento", "ajuda", "contato", "fale conosco", "suporte", "chatbot", "assistente virtual"
     ]
 
     mensagem_lower = mensagem.lower()
     return any(palavra in mensagem_lower for palavra in palavras_relevantes)
+
