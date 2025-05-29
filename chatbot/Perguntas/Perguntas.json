@@ -1,92 +1,54 @@
 {
   "perguntas": [
-    {
-      "id": 1,
-      "pergunta": "Como posso entrar em contato com o suporte?"
-    },
-    {
-      "id": 2,
-      "pergunta": "Vocês oferecem atendimento via chatbot?"
-    },
-    {
-      "id": 3,
-      "pergunta": "O que posso fazer se o chatbot não resolver minha dúvida?"
-    },
-    {
-      "id": 4,
-      "pergunta": "Como posso acompanhar o status do meu pedido?"
-    },
-    {
-      "id": 5,
-      "pergunta": "Vocês oferecem suporte 24 horas?"
-    },
-    {
-      "id": 6,
-      "pergunta": "Quais são as vantagens de comprar na sua loja virtual?"
-    },
-    {
-      "id": 7,
-      "pergunta": "Como posso me cadastrar para receber novidades e promoções?"
-    },
-    {
-      "id": 8,
-      "pergunta": "Vocês oferecem garantia nos produtos?"
-    },
-    {
-      "id": 9,
-      "pergunta": "Como posso devolver ou trocar um produto?"
-    },
-    {
-      "id": 10,
-      "pergunta": "Há algum programa de fidelidade ou recompensas?"
-    },
-    {
-      "id": 11,
-      "pergunta": "Posso personalizar o design do produto?"
-    },
-    {
-      "id": 12,
-      "pergunta": "Quais opções de cores estão disponíveis?"
-    },
-    {
-      "id": 13,
-      "pergunta": "Vocês oferecem serviços de personalização?"
-    },
-    {
-      "id": 14,
-      "pergunta": "Como posso visualizar as opções de design antes de comprar?"
-    },
-    {
-      "id": 15,
-      "pergunta": "Há custos adicionais para personalização?"
-    },
-    {
-      "id": 16,
-      "pergunta": "Quais formas de pagamento vocês aceitam?"
-    },
-    {
-      "id": 17,
-      "pergunta": "Posso parcelar minha compra?"
-    },
-    {
-      "id": 18,
-      "pergunta": "Há algum desconto para pagamentos à vista?"
-    },
-    {
-      "id": 19,
-      "pergunta": "Vocês oferecem promoções ou cupons de desconto?"
-    },
-    {
-      "id": 20,
-      "pergunta": "Como posso aplicar um código promocional?"
-    },
-    {
-      "id": 21,
-      "pergunta": "Quais produtos estão disponíveis em estoque?"
-    },
-    {
-      "id": 22,
-      "pergunta": "Vocês oferecem planos de assinatura?"
-    }
-  ]}
+    { "id": 1, "pergunta": "Qual suplemento é indicado para ganho de massa muscular?" },
+    { "id": 2, "pergunta": "Qual suplemento é melhor para perder gordura?" },
+    { "id": 3, "pergunta": "Qual a diferença entre whey protein concentrado, isolado e hidrolisado?" },
+    { "id": 4, "pergunta": "Creatina engorda?" },
+    { "id": 5, "pergunta": "Posso tomar creatina e whey juntos?" },
+    { "id": 6, "pergunta": "Quais suplementos são recomendados para iniciantes?" },
+    { "id": 7, "pergunta": "Vocês vendem suplementos veganos?" },
+    { "id": 8, "pergunta": "Quais produtos são livres de lactose ou glúten?" },
+    { "id": 9, "pergunta": "Este produto é aprovado pela Anvisa?" },
+    { "id": 10, "pergunta": "Qual é a data de validade dos suplementos?" },
 
+    { "id": 11, "pergunta": "Quais são as opções de entrega disponíveis?" },
+    { "id": 12, "pergunta": "Qual o prazo de entrega para minha região?" },
+    { "id": 13, "pergunta": "O frete é grátis acima de qual valor?" },
+    { "id": 14, "pergunta": "Como acompanho o status do meu pedido?" },
+    { "id": 15, "pergunta": "Vocês entregam em todo o Brasil?" },
+    { "id": 16, "pergunta": "E se meu pedido chegar com o produto danificado?" },
+    { "id": 17, "pergunta": "Posso retirar o produto em loja física?" },
+
+    { "id": 18, "pergunta": "Quais formas de pagamento vocês aceitam?" },
+    { "id": 19, "pergunta": "Posso pagar com Pix?" },
+    { "id": 20, "pergunta": "É possível parcelar a compra no cartão?" },
+    { "id": 21, "pergunta": "Existe algum desconto para pagamento à vista?" },
+    { "id": 22, "pergunta": "Meu pagamento foi aprovado, mas não recebi confirmação. E agora?" },
+
+    { "id": 23, "pergunta": "Posso trocar um suplemento por outro?" },
+    { "id": 24, "pergunta": "Como funciona a política de devolução?" },
+    { "id": 25, "pergunta": "Em quanto tempo posso devolver um produto?" },
+    { "id": 26, "pergunta": "Recebi o produto errado, o que faço?" },
+    { "id": 27, "pergunta": "Qual o prazo para reembolso?" },
+
+    { "id": 28, "pergunta": "Onde vejo meu histórico de compras?" },
+    { "id": 29, "pergunta": "Como posso cancelar um pedido?" },
+    { "id": 30, "pergunta": "Posso alterar o endereço de entrega após o pedido feito?" },
+    { "id": 31, "pergunta": "Por que meu pedido está atrasado?" },
+    { "id": 32, "pergunta": "Posso adicionar mais produtos depois de fechar o pedido?" },
+
+    { "id": 33, "pergunta": "Como devo tomar o whey protein?" },
+    { "id": 34, "pergunta": "Qual o melhor horário para tomar BCAA?" },
+    { "id": 35, "pergunta": "Crianças podem tomar suplementos?" },
+    { "id": 36, "pergunta": "Suplementos substituem refeições?" },
+    { "id": 37, "pergunta": "É necessário consultar um nutricionista antes de usar?" },
+
+    { "id": 38, "pergunta": "Vocês oferecem atendimento por WhatsApp?" },
+    { "id": 39, "pergunta": "Como posso receber promoções e cupons?" },
+    { "id": 40, "pergunta": "Existe um programa de fidelidade ou pontos?" },
+    { "id": 41, "pergunta": "O site de vocês é seguro?" },
+    { "id": 42, "pergunta": "Onde encontro o CNPJ e dados da empresa?" },
+    {"id":  43, "pergunta":  "Qual suplemento você me recomenda para perder peso?"},
+    {"id": 44, "pergunta":  "Qual suplemento você me recomenda para ganhar peso"}
+  ]
+}
