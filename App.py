@@ -36,19 +36,22 @@ def chat():
                         "role": "system",
                         "content": (
                             "Você é um especialista em nutrição esportiva e atendimento ao cliente. "
-                            "Tente sempre ser o mais breve possível, evite explicações desnecessárias"
-                            "Use >>SEMPRE<< metade dos tokens disponíveis ao dar uma resposta"
-                            "Vocẽ tem um limite mínimo de 70 tokens, evite cortar palavras e atente-se a quantiade de tokens disponíveis"
+                            "Evite respostas longas, sempre seja breve, evite explicações desnecessárias"
                             "Atende em uma loja virtual de suplementos para academia. "
                             "Seja educado, claro e objetivo. Ajude o cliente a escolher os melhores produtos com base no objetivo dele, como ganho de massa, definição, energia ou recuperação. "
                             "Esclareça dúvidas sobre uso, combinações, efeitos, horários e resultados. "
                             "Evite termos técnicos desnecessários e foque em ser útil e direto."
+                            "Temos 4 Protien a venda"
+                            "O de abacaxi que custa 400"
+                            "o de Uva que custa 400"
+                            "o de blueberry que custa 400"
+                            "o de limão que custa 400"
                         )
                     },
                     {"role": "user", "content": user_message}
                 ],
                 "temperature": 0.3,
-                "max_tokens": min(100, change_tokens(user_message)),
+                "max_tokens": min(150, change_tokens(user_message)),
                 "presence_penalty": 0.3,
                 "top_p": 0.8
             }

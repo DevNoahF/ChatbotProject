@@ -109,7 +109,7 @@ def idnt_question(message: str) -> Union[int, Tuple[str, float]]:
 def palavras_chave(mensagem: str) -> bool:
     palavras_relevantes = [
         # Suplementos e produtos
-        "whey", "whey protein", "creatina", "bcaa", "termogênico", "pré-treino", "glutamina", "multivitamínico",
+        "whey", "whey protein", "termogênico",  "glutamina", "multivitamínico",
         "hipercalórico", "caseína", "colágeno", "omega 3", "zma", "cafeína",
 
         # Objetivos e benefícios
