@@ -38,7 +38,6 @@
     { "id": 32, "pergunta": "Posso adicionar mais produtos depois de fechar o pedido?" },
 
     { "id": 33, "pergunta": "Como devo tomar o whey protein?" },
-    { "id": 34, "pergunta": "Qual o melhor horário para tomar BCAA?" },
     { "id": 35, "pergunta": "Crianças podem tomar suplementos?" },
     { "id": 36, "pergunta": "Suplementos substituem refeições?" },
     { "id": 37, "pergunta": "É necessário consultar um nutricionista antes de usar?" },
@@ -49,6 +48,8 @@
     { "id": 41, "pergunta": "O site de vocês é seguro?" },
     { "id": 42, "pergunta": "Onde encontro o CNPJ e dados da empresa?" },
     {"id":  43, "pergunta":  "Qual suplemento você me recomenda para perder peso?"},
-    {"id": 44, "pergunta":  "Qual suplemento você me recomenda para ganhar peso"}
+    {"id": 44, "pergunta":  "Qual suplemento você me recomenda para ganhar peso"},
+    {"id": 45, "pergunta":  "Quais produtos estão a venda?"}
+
   ]
 }

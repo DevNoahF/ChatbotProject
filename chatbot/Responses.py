@@ -69,7 +69,7 @@ def palavras_chave(mensagem: str) -> bool:
     palavras_relevantes = [
         # Suplementos e produtos
         "whey", "whey protein", "creatina", "bcaa", "termogênico", "pré-treino", "glutamina", "multivitamínico",
-        "hipercalórico", "caseína", "colágeno", "omega 3", "zma", "cafeína",
+        "hipercalórico", "caseína", "colágeno", "omega 3", "zma", "cafeína","produto","produtos","peso","massa"
 
         # Objetivos e benefícios
         "ganho de massa", "hipertrofia", "definição muscular", "perder gordura", "emagrecimento", "energia para treino",

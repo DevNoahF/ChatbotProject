@@ -35,20 +35,21 @@ def chat():
                     {
                         "role": "system",
                         "content": (
+
                             "Você é um especialista em nutrição esportiva e atendimento ao cliente. "
-                            "Tente sempre ser o mais breve possível, evite explicações desnecessárias"
-                            "Use >>SEMPRE<< metade dos tokens disponíveis ao dar uma resposta"
+                            "Evite usar termos técnicos, seja breve, direto e evite explicações desnecessárias"
                             "Vocẽ tem um limite mínimo de 70 tokens, evite cortar palavras e atente-se a quantiade de tokens disponíveis"
                             "Atende em uma loja virtual de suplementos para academia. "
                             "Seja educado, claro e objetivo. Ajude o cliente a escolher os melhores produtos com base no objetivo dele, como ganho de massa, definição, energia ou recuperação. "
                             "Esclareça dúvidas sobre uso, combinações, efeitos, horários e resultados. "
                             "Evite termos técnicos desnecessários e foque em ser útil e direto."
+                            "Vendemos Whey Protein de Abacaxi, uva, limão e blueberry, todos pelo mesmo preço de 400 reais"
                         )
                     },
                     {"role": "user", "content": user_message}
                 ],
                 "temperature": 0.3,
-                "max_tokens": min(100, change_tokens(user_message)),
+                "max_tokens": min(150, change_tokens(user_message)),
                 "presence_penalty": 0.3,
                 "top_p": 0.8
             }
