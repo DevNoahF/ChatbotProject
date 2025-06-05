@@ -18,48 +18,7 @@ nltk.download('stopwords')
 nlp = spacy.load("pt_core_news_lg")
 stop_words = set(stopwords.words('portuguese'))
 
-# ==========================
-# CONTEXTO DE TEMPLATE
-# ==========================
-
-def load_template_context(template_id: str) -> str:
-    try:
-        with open(f"templates_contexto/{template_id}.json", encoding="utf-8") as f:
-            return json.load(f).get("contexto", "")
-    except FileNotFoundError:
-        return "Você é um assistente virtual de atendimento. Seja educado, claro e objetivo."
-
-# ==========================
-# CHAMADA GPT
-# ==========================
-
-def get_bot_reply(user_message: str, template_id: str = "loja_designs") -> str:
-    contexto = load_template_context(template_id)
-    payload = {
-        "model": "openai/gpt-3.5-turbo",
-        "messages": [
-            {"role": "system", "content": contexto},
-            {"role": "user", "content": user_message}
-        ],
-        "temperature": 0.3,
-        "max_tokens": min(150, change_tokens(user_message)),
-        "presence_penalty": 0.3,
-        "top_p": 0.8
-    }
-    try:
-        response = requests.post(
-            "https://openrouter.ai/api/v1/chat/completions",
-            headers={
-                "Authorization": f"Bearer {ROUTEROPENIA_API_KEY}",
-                "Content-Type": "application/json"
-            },
-            json=payload
-        )
-        response.raise_for_status()
-        return response.json()["choices"][0]["message"]["content"]
-    except Exception:
-        return "Desculpe, ocorreu um erro ao tentar gerar a resposta. Tente novamente em instantes."
-
+#
 # ==========================
 # PRÉ-PROCESSAMENTO DE TEXTO
 # ==========================
